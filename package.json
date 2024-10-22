@@ -3,10 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev:frontend": "cd frontend && next dev",
-    "build": "cd frontend && next build",
-    "start:frontend": "cd frontend && next start",
-    "lint": "cd frontend && next lint",
+
     "dev:backend": "nodemon backend/server.js",
     "start:backend": "node backend/server.js",
     "backend": "node server.js"
