@@ -3,14 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    
-    
     "dev:backend": "nodemon backend/server.js",
     "start:backend": "node backend/server.js",
     "backend": "node server.js",
-
     "build": "npm install"
-  
   },
   "dependencies": {
     "@emotion/react": "^11.13.3",
