@@ -3,16 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev:frontend": "cd frontend && next dev",
-    "build": "cd frontend && next build",
-    "start:frontend": "cd frontend && next start",
-    "lint": "cd frontend && next lint",
     "dev:backend": "nodemon backend/server.js",
     "start:backend": "node backend/server.js",
-    "backend": "node server.js"
+    "backend": "node server.js",
+    "build": "npm install"
   },
   "dependencies": {
     "@emotion/react": "^11.13.3",
+    "@eslint/config-array": "^0.18.0",
+    "@eslint/object-schema": "^2.1.4",
     "@nextui-org/react": "^2.4.6",
     "agrirent": "file:",
     "autoprefixer": "^10.4.20",
@@ -20,14 +19,17 @@
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
+    "glob": "^11.0.0",
     "jsonwebtoken": "^8.5.1",
+    "lru-cache": "^11.0.1",
     "mongodb": "^6.8.0",
     "mongoose": "^8.7.1",
     "multer": "^1.4.5-lts.1",
     "next": "^14.2.5",
     "react": "^18",
     "react-dom": "^18",
-    "react-hot-toast": "^2.4.1"
+    "react-hot-toast": "^2.4.1",
+    "rimraf": "^6.0.1"
   },
   "devDependencies": {
     "@types/node": "^20.16.5",
