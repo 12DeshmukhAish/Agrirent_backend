@@ -11,14 +11,37 @@ dotenv.config();
 
 const app = express();
 
-// Configure CORS
-app.use(cors({
-  origin: process.env.FRONTEND_URL || "https://agrirent-frontend.vercel.app",
+// // Configure CORS
+// app.use(cors({
+//   origin: process.env.FRONTEND_URL || "https://agrirent-frontend.vercel.app",
+//   credentials: true,
+//   methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+//   allowedHeaders: ["X-CSRF-Token", "X-Requested-With", "Accept", "Accept-Version", "Content-Length", "Content-MD5", "Content-Type", "Date", "X-Api-Version", "Authorization"]
+// }));
+
+
+// Update your CORS configuration
+const corsOptions = {
+  origin: process.env.NODE_ENV === 'production' 
+    ? 'https://agrirent-frontend.vercel.app'
+    : ['http://localhost:3000', 'https://agrirent-frontend.vercel.app'],
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
-  allowedHeaders: ["X-CSRF-Token", "X-Requested-With", "Accept", "Accept-Version", "Content-Length", "Content-MD5", "Content-Type", "Date", "X-Api-Version", "Authorization"]
-}));
+  allowedHeaders: [
+    "X-CSRF-Token",
+    "X-Requested-With",
+    "Accept",
+    "Accept-Version",
+    "Content-Length",
+    "Content-MD5",
+    "Content-Type",
+    "Date",
+    "X-Api-Version",
+    "Authorization"
+  ]
+};
 
+app.use(cors(corsOptions));
 // Middleware
 app.use(express.json());
 app.use('/uploads', express.static(path.join(__dirname, 'public/uploads')));
