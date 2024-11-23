@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@emotion/react": "^11.13.3",
-    "@eslint/config-array": "^0.18.0",
+    "@eslint/config-array": "^0.19.0",
     "@eslint/object-schema": "^2.1.4",
     "@nextui-org/react": "^2.4.6",
     "agrirent": "file:",
